@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>src.models package &#8212; STOCK PORTFOLIO MANAGER 1.0.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=5ecbeea2" />
+    <link rel="stylesheet" type="text/css" href="_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=27fed22d" />
+    <script src="_static/documentation_options.js?v=8d563738"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="src.utils package" href="src.utils.html" />
+    <link rel="prev" title="src package" href="src.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="src-models-package">
+<h1>src.models package<a class="headerlink" href="#src-models-package" title="Link to this heading">¶</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading">¶</a></h2>
+</section>
+<section id="module-src.models.portfolio">
+<span id="src-models-portfolio-module"></span><h2>src.models.portfolio module<a class="headerlink" href="#module-src.models.portfolio" title="Link to this heading">¶</a></h2>
+<p>”
+This module defines a Portfolio class that represents a stock portfolio.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="src.models.portfolio.Portfolio">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.models.portfolio.</span></span><span class="sig-name descname"><span class="pre">Portfolio</span></span><a class="reference internal" href="_modules/src/models/portfolio.html#Portfolio"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.models.portfolio.Portfolio" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A class to represent a stock portfolio.</p>
+<dl class="simple">
+<dt>Attributes:</dt><dd><p>cash (float): The amount of cash available in the portfolio
+tickers (dict): A dictionary mapping ticker symbols to Ticker objects        
+file_path: Path to the JSON file for saving/loading portfolio data</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="src.models.portfolio.Portfolio.buy_ticker">
+<span class="sig-name descname"><span class="pre">buy_ticker</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ticker</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#src.models.ticker.Ticker" title="src.models.ticker.Ticker"><span class="pre">Ticker</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/models/portfolio.html#Portfolio.buy_ticker"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.models.portfolio.Portfolio.buy_ticker" title="Link to this definition">¶</a></dt>
+<dd><p>Add or update a Ticker object in the portfolio, deducting cost from cash.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.models.portfolio.Portfolio.calculate_total_value">
+<span class="sig-name descname"><span class="pre">calculate_total_value</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="reference internal" href="_modules/src/models/portfolio.html#Portfolio.calculate_total_value"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.models.portfolio.Portfolio.calculate_total_value" title="Link to this definition">¶</a></dt>
+<dd><p>Calculate total portfolio value (cash + market value of tickers).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.models.portfolio.Portfolio.get_ticker">
+<span class="sig-name descname"><span class="pre">get_ticker</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">symbol</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#src.models.ticker.Ticker" title="src.models.ticker.Ticker"><span class="pre">Ticker</span></a></span></span><a class="reference internal" href="_modules/src/models/portfolio.html#Portfolio.get_ticker"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.models.portfolio.Portfolio.get_ticker" title="Link to this definition">¶</a></dt>
+<dd><p>Retrieve a Ticker by its symbol.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.models.portfolio.Portfolio.reset_portfolio">
+<span class="sig-name descname"><span class="pre">reset_portfolio</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/models/portfolio.html#Portfolio.reset_portfolio"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.models.portfolio.Portfolio.reset_portfolio" title="Link to this definition">¶</a></dt>
+<dd><p>Reset portfolio to default state and clear the JSON file.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.models.portfolio.Portfolio.save_to_json">
+<span class="sig-name descname"><span class="pre">save_to_json</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/models/portfolio.html#Portfolio.save_to_json"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.models.portfolio.Portfolio.save_to_json" title="Link to this definition">¶</a></dt>
+<dd><p>Save portfolio to a JSON file.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.models.portfolio.Portfolio.sell_ticker">
+<span class="sig-name descname"><span class="pre">sell_ticker</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ticker</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#src.models.ticker.Ticker" title="src.models.ticker.Ticker"><span class="pre">Ticker</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/models/portfolio.html#Portfolio.sell_ticker"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.models.portfolio.Portfolio.sell_ticker" title="Link to this definition">¶</a></dt>
+<dd><p>Sell a specific amount of a Ticker, adding proceeds to cash.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.models.portfolio.Portfolio.update_cash">
+<span class="sig-name descname"><span class="pre">update_cash</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">amount</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/models/portfolio.html#Portfolio.update_cash"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.models.portfolio.Portfolio.update_cash" title="Link to this definition">¶</a></dt>
+<dd><p>Add or subtract from cash.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-src.models.ticker">
+<span id="src-models-ticker-module"></span><h2>src.models.ticker module<a class="headerlink" href="#module-src.models.ticker" title="Link to this heading">¶</a></h2>
+<p>This module defines a Ticker class that represents a financial security.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="src.models.ticker.Ticker">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.models.ticker.</span></span><span class="sig-name descname"><span class="pre">Ticker</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">symbol</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">amount</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/models/ticker.html#Ticker"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.models.ticker.Ticker" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Represents a financial security held in a portfolio.</p>
+<dl class="simple">
+<dt>Attributes:</dt><dd><p>symbol (str): The stock ticker symbol (e.g., “MSFT”).
+amount (float): The value or quantity held of the security.</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="src.models.ticker.Ticker.amount">
+<span class="sig-name descname"><span class="pre">amount</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#src.models.ticker.Ticker.amount" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.models.ticker.Ticker.current_value">
+<span class="sig-name descname"><span class="pre">current_value</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="reference internal" href="_modules/src/models/ticker.html#Ticker.current_value"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.models.ticker.Ticker.current_value" title="Link to this definition">¶</a></dt>
+<dd><p>Calculate the current total value of the holding.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.models.ticker.Ticker.get_current_price">
+<span class="sig-name descname"><span class="pre">get_current_price</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="reference internal" href="_modules/src/models/ticker.html#Ticker.get_current_price"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.models.ticker.Ticker.get_current_price" title="Link to this definition">¶</a></dt>
+<dd><p>Fetch the current price of the stock using yfinance.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="src.models.ticker.Ticker.symbol">
+<span class="sig-name descname"><span class="pre">symbol</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#src.models.ticker.Ticker.symbol" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-src.models">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-src.models" title="Link to this heading">¶</a></h2>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">STOCK PORTFOLIO MANAGER</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">src</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="src.html">src package</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="modules.html">src</a><ul>
+  <li><a href="src.html">src package</a><ul>
+      <li>Previous: <a href="src.html" title="previous chapter">src package</a></li>
+      <li>Next: <a href="src.utils.html" title="next chapter">src.utils package</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2025, alexene22.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.2.3</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="_sources/src.models.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
