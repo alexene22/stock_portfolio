@@ -14,6 +14,4 @@ venv/
 data/*.json
 
 # Sphinx
-docs/build/
-docs/source/_autosummary/
-docs/source/generated/
+docs/_build/
