@@ -11,6 +11,9 @@ venv/
 .idea/
 
 # Data/output/logs
-*.log
-*.csv
-*.json
+data/*.json
+
+# Sphinx
+docs/build/
+docs/source/_autosummary/
+docs/source/generated/
