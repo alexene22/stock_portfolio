@@ -44,7 +44,7 @@ def get_symbol_input(prompt: str) -> str:
 
 def main():
     """Main function to run the Stock Portfolio Manager."""
-    portfolio = Portfolio()  # Initialize portfolio with 10000 cash
+    portfolio = Portfolio()  # Initialize portfolio
 
     while True:
         display_menu()
