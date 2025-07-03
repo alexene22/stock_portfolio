@@ -3,7 +3,7 @@ This module defines a Ticker class that represents a financial security.
 """
 
 from dataclasses import dataclass 
-from src.yfinance_stock_data import get_ticker_price
+from src.utils.yfinance_stock_data import get_ticker_price
 
 
 @dataclass

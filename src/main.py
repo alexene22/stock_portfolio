@@ -4,8 +4,8 @@ import os
 import sys
 sys.path.append((os.path.dirname(os.getcwd())))
 
-from src.ticker import Ticker
-from src.portfolio import Portfolio
+from src.models.ticker import Ticker
+from src.models.portfolio import Portfolio
 
 
 def display_menu():
@@ -44,7 +44,7 @@ def get_symbol_input(prompt: str) -> str:
 
 def main():
     """Main function to run the Stock Portfolio Manager."""
-    portfolio = Portfolio(10000)  # Initialize portfolio with 10000 cash
+    portfolio = Portfolio()  # Initialize portfolio with 10000 cash
 
     while True:
         display_menu()
@@ -54,7 +54,7 @@ def main():
             print(portfolio)
 
         elif choice == "1":  # Buy Ticker
-            symbol = get_symbol_input("Enter ticker symbol (e.g., MSFT): ")
+            symbol = get_symbol_input("Enter ticker symbol: ")
             amount = get_float_input("Enter number of shares to buy: ")
             
             try:
@@ -71,17 +71,13 @@ def main():
                 print(f"Error: {symbol} not found in portfolio.")
                 continue
             
-            amount = get_float_input(
-                f"Enter number of shares to sell (max {ticker.amount}): "
-            )
+            amount = get_float_input(f"Enter number of shares to sell (max {ticker.amount}): ")
             if amount > ticker.amount:
-                print(
-                    f"Error: Cannot sell {amount} shares; only {ticker.amount} available."
-                )
+                print(f"Error: Cannot sell {amount} shares; only {ticker.amount} available.")
                 continue
 
             try:
-                portfolio.sell_ticker(symbol, amount)
+                portfolio.sell_ticker(Ticker(symbol=symbol, amount=amount))
                 portfolio.save_to_json()                
             except ValueError as e:
                 print(f"Error: {e}")
